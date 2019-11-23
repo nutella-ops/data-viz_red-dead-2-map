@@ -2,6 +2,9 @@
 PImage mapRedDead2;
 int z = 5;
 
+//circle diam multiplier
+final int mul = 4;
+
 //constant stuff
 void setup() 
 {
@@ -17,13 +20,14 @@ void setup()
 //non-constant stuff
 void draw() 
 {
-  if (mousePressed == true)  
-  {
-    //circle diam multiplier
-    int mul = 4;
+  
+}
+
+// Mouse click event handler
+void mouseClicked()
+{
     //fill(r,  g , b, transparency)
     fill(0, 200, 0, 10);
     noStroke();
     ellipse(mouseX, mouseY, 10*mul, 10*mul);
-  }
 }
