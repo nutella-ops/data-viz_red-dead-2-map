@@ -47,8 +47,8 @@ void mouseWheel(MouseEvent ev)
   final float distance = ev.getCount();
   final float scaleFactor = 1 + 0.05 * distance * -1;
   
-  final int newDispHeight = (int)(dispHeight * scaleFactor);
-  final int newDispWidth = (int)(dispWidth * scaleFactor);
+  final int newDispHeight = (int)Math.round(dispHeight * scaleFactor);
+  final int newDispWidth = (int)Math.round(dispWidth * scaleFactor);
   
   // Prevent zooming out further than the size of the window
   if(newDispHeight <= height && newDispWidth <= width) return;
