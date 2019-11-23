@@ -1,9 +1,14 @@
+import java.lang.Math;
+
 //image variables need to be declared with PImage type
 PImage mapRedDead2;
 int z = 5;
 
 //circle diam multiplier
-final int mul = 4;
+public final int mul = 4;
+
+public int dispWidth;
+public int dispHeight;
 
 //constant stuff
 void setup() 
@@ -13,7 +18,10 @@ void setup()
 
   //map_ 7200x5400
   mapRedDead2 = loadImage("../res/map_all-red-dead-2.jpg");
-  image(mapRedDead2, -560*(z-2), -70*(z+7), 720*(z+0.5), 540*(z+0.5));
+  //image(mapRedDead2, -560*(z-2), -70*(z+7), 720*(z+0.5), 540*(z+0.5));
+  dispWidth = mapRedDead2.width;
+  dispHeight = mapRedDead2.height;
+  image(mapRedDead2, 0, 0);
 }
 
 
@@ -33,4 +41,19 @@ void mouseClicked()
     fill(0, 200, 0, 10);
     noStroke();
     ellipse(mouseX, mouseY, 10*mul, 10*mul);
+}
+
+void mouseWheel(MouseEvent ev)
+{
+  final float distance = ev.getCount();
+  final float scaleFactor = 1 + 0.05 * distance;
+  
+  final int newDispHeight = (int)(dispHeight * scaleFactor);
+  final int newDispWidth = (int)(dispWidth * scaleFactor);
+  
+  if(newDispHeight <= height && newDispWidth <= width) return;
+  
+  dispWidth = newDispWidth;
+  dispHeight = newDispHeight;
+  image(mapRedDead2, 0, 0, dispWidth, dispHeight); 
 }
