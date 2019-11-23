@@ -51,7 +51,11 @@ void mouseWheel(MouseEvent ev)
   final int newDispHeight = (int)(dispHeight * scaleFactor);
   final int newDispWidth = (int)(dispWidth * scaleFactor);
   
+  // Prevent zooming out further than the size of the window
   if(newDispHeight <= height && newDispWidth <= width) return;
+  
+  // Prevent zooming in further than the full resolution of the image
+  if(newDispHeight >= mapRedDead2.height) return;
   
   dispWidth = newDispWidth;
   dispHeight = newDispHeight;
