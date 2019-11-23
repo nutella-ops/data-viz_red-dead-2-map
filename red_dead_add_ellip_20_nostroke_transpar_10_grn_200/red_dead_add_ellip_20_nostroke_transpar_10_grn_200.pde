@@ -7,7 +7,9 @@ int z = 5;
 //circle diam multiplier
 public final int mul = 4;
 
+// Width that the image is displayed at (not necessarily the original width)
 public int dispWidth;
+// Height that the image is displayed at (not necessarily the original height)
 public int dispHeight;
 
 //constant stuff
@@ -42,6 +44,10 @@ void mouseClicked()
     ellipse(mouseX, mouseY, 10*mul, 10*mul);
 }
 
+/**
+ * Mouse wheel event handler
+ * @see https://processing.org/reference/mouseWheel_.html
+ */
 void mouseWheel(MouseEvent ev)
 {
   final float distance = ev.getCount();
