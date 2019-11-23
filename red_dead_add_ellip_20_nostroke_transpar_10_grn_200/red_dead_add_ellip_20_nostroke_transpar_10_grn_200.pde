@@ -23,7 +23,10 @@ void draw()
   
 }
 
-// Mouse click event handler
+/**
+ * Mouse click event handler
+ * @see https://processing.org/reference/mouseClicked_.html
+ */
 void mouseClicked()
 {
     //fill(r,  g , b, transparency)
