@@ -14,7 +14,7 @@ public int dispHeight;
 void setup() 
 {
   //[oreilly_visualizing-data.pdf, p. xx] = zooming in 
-  size(700, 600);
+  size(1296, 972);
 
   //map_ 7200x5400
   mapRedDead2 = loadImage("../res/map_all-red-dead-2.jpg");
