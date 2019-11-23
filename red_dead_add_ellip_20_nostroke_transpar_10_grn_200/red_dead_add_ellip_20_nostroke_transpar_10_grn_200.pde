@@ -46,7 +46,7 @@ void mouseClicked()
 void mouseWheel(MouseEvent ev)
 {
   final float distance = ev.getCount();
-  final float scaleFactor = 1 + 0.05 * distance;
+  final float scaleFactor = 1 + 0.05 * distance * -1;
   
   final int newDispHeight = (int)(dispHeight * scaleFactor);
   final int newDispWidth = (int)(dispWidth * scaleFactor);
