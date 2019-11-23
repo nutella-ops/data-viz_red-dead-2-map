@@ -18,10 +18,9 @@ void setup()
 
   //map_ 7200x5400
   mapRedDead2 = loadImage("../res/map_all-red-dead-2.jpg");
-  //image(mapRedDead2, -560*(z-2), -70*(z+7), 720*(z+0.5), 540*(z+0.5));
+  image(mapRedDead2, -1 * mapRedDead2.width / 2 + width / 2, -1 * mapRedDead2.height / 2 + height / 2);
   dispWidth = mapRedDead2.width;
   dispHeight = mapRedDead2.height;
-  image(mapRedDead2, 0, 0);
 }
 
 
@@ -59,5 +58,5 @@ void mouseWheel(MouseEvent ev)
   
   dispWidth = newDispWidth;
   dispHeight = newDispHeight;
-  image(mapRedDead2, 0, 0, dispWidth, dispHeight); 
+  image(mapRedDead2, -1 * dispWidth / 2 + width / 2, -1 * dispHeight / 2 + height / 2, dispWidth, dispHeight); 
 }
